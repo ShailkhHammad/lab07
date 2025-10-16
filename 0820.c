@@ -45,11 +45,12 @@ int task02()
         }
     }
 
-     printf("the %d is found %d times ",numToFind,count);
+    printf("the %d is found %d times ", numToFind, count);
     return 0;
 }
 
-int task03(){
+int task03()
+{
 
     int marks;
     int passStudents[10], failStudents[10];
@@ -58,45 +59,99 @@ int task03(){
 
     printf("Enter student marks one by one (enter -1 to stop):\n");
 
-    while (1) {
+    while (1)
+    {
         scanf("%d", &marks);
 
-        if (marks == -1) {
+        if (marks == -1)
+        {
             break;
         }
 
-        if (marks >= 5) {
+        if (marks >= 5)
+        {
             passStudents[passCount++] = marks;
             sumPass += marks;
-        } else {
+        }
+        else
+        {
             failStudents[failCount++] = marks;
             sumFail += marks;
         }
     }
 
-    if (passCount > 0) {
+    if (passCount > 0)
+    {
         printf("Average marks of Pass Students: %.2f\n", (float)sumPass / passCount);
-    } else {
+    }
+    else
+    {
         printf("No Pass Students.\n");
     }
 
-    if (failCount > 0) {
+    if (failCount > 0)
+    {
         printf("Average marks of Fail Students: %.2f\n", (float)sumFail / failCount);
-    } else {
+    }
+    else
+    {
         printf("No Fail Students.\n");
     }
 
     return 0;
 }
 
-int task04(){
+int task05()
+{
+    int smallest = 1000, largest = 0;
+    int num[10] = {0};
+    for (int i = 0; i < 10; i++)
+    {
+        printf("\n  enter  number:");
+        scanf("%d", &num[i]);
+        if (num[i] < smallest)
+        {
+            smallest = num[i];
+        }
 
+        if (num[i] > largest)
+        {
+            largest = num[i];
+        }
+    }
 }
 
+int task07()
+{
+    int arr[10], dup[101] = {0};
+    for (int i = 0; i < 10; i++)
+    {
+        printf("\n enter a number");
+        scanf("%d", arr[i]);
+    }
+
+    for (int i = 0; i < 10; i++)
+    {
+        if (dup[arr[i]] == 0)
+        {
+            dup[arr[i]] = 1;
+        }
+        else
+        {
+            arr[i] = -1;
+        }
+    }
+
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d", arr[i]);
+    }
+}
 int main()
 {
 
     task01();
     task02();
+    task03();
     return 0;
 }
