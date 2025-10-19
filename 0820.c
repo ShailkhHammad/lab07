@@ -101,6 +101,23 @@ int task03()
     return 0;
 }
 
+int task04(){
+char str[100];
+    printf("Enter a sentence: ");
+    scanf("%[^\n]", str);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            str[i] = str[i] - ('a' - 'A'); // Convert to uppercase
+        } else if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + ('a' - 'A'); // Convert to lowercase
+        }
+    }
+
+    printf("Converted message: %s\n", str);
+    return 0;
+}
+
 int task05()
 {
     int smallest = 1000, largest = 0;
@@ -119,6 +136,35 @@ int task05()
             largest = num[i];
         }
     }
+}
+
+int task06()
+{
+    char str[100];
+    int vowels = 0, consonants = 0;
+
+    printf("Enter a word: ");
+    scanf("%s", str);
+
+    for (int i = 0; str[i] != '\0'; i++)
+    {
+        char ch = str[i];
+            if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' ||
+                ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+            {
+                vowels++;
+            }
+            else
+            {
+                consonants++;
+            }
+        
+    }
+
+    printf("Vowels: %d\n", vowels);
+    printf("Consonants: %d\n", consonants);
+
+    return 0;
 }
 
 int task07()
@@ -153,5 +199,9 @@ int main()
     task01();
     task02();
     task03();
+    task04();
+    task05();
+    task06();
+    task07();
     return 0;
 }
