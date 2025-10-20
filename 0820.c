@@ -136,6 +136,7 @@ int task05()
             largest = num[i];
         }
     }
+    printf("\n largest:%d, smallest:%d" , largest,smallest);
 }
 
 int task06()
@@ -173,7 +174,7 @@ int task07()
     for (int i = 0; i < 10; i++)
     {
         printf("\n enter a number");
-        scanf("%d", arr[i]);
+        scanf("%d", &arr[i]);
     }
 
     for (int i = 0; i < 10; i++)
@@ -193,6 +194,17 @@ int task07()
         printf("%d", arr[i]);
     }
 }
+
+int task08(){
+char str[100];
+    printf("Enter a string (non-alphabetic characters only): ");
+    scanf("%[^A-Za-z]", str);
+
+    printf("You entered: %s\n", str);
+    return 0;
+
+}
+
 int main()
 {
 
@@ -203,5 +215,7 @@ int main()
     task05();
     task06();
     task07();
+    task08();
     return 0;
 }
+
